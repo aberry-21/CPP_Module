@@ -10,5 +10,7 @@ add_compile_options(
         -Wextra
 )
 
+set(CMAKE_CXX_COMPILER "/usr/bin/clang++")
+
 add_executable(${PROJECT_NAME} megaphone.cpp)
 #target_include_directories(${PROJECT_NAME} PUBLIC path_to_dir)
