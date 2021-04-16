@@ -10,9 +10,24 @@
 #define MAX_COUNT_CONTACT 8
 
 class PhoneBook {
-  int                           count_index_;
-  Contact                       contacts[MAX_COUNT_CONTACT];
+  int                             size_;
+  Contact                         contacts_[MAX_COUNT_CONTACT];
+  static const char               message[12][32];
+  typedef void (Contact::*setterContactField)(const std::string &data);
+  static const setterContactField setter_func[12];
  public:
+
+  PhoneBook& operator=(const PhoneBook &other);
+
+  PhoneBook(const PhoneBook &other);
+
+  PhoneBook();
+
+  ~PhoneBook();
+
+  void CallContactAddField(int contact_index, int field_index, const std::string &data);
+
+  void AddContact();
 
 };
 

@@ -8,7 +8,6 @@
 
 #include <string>
 
-
 class Contact{
   int                          index_;
   std::string                  first_name_;
@@ -23,11 +22,10 @@ class Contact{
   std::string                  meal_;
   std::string                  underwear_color_;
   std::string                  darkest_secret_;
-  Contact();
-
-  void setIndex(int index);
 
  public:
+  Contact();
+
   explicit Contact(int index);
 
   Contact& operator=(const Contact &other);
@@ -35,6 +33,8 @@ class Contact{
   Contact(const Contact &other);
 
   ~Contact();
+
+  void setIndex(int index);
 
   int getIndex() const;
 
@@ -85,6 +85,7 @@ class Contact{
   const std::string &getDarkestSecret() const;
 
   void setDarkestSecret(const std::string &darkestSecret);
+
 };
 
 #endif //CONTACT_HPP

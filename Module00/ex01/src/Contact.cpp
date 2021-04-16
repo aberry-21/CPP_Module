@@ -13,7 +13,7 @@ Contact::~Contact() {}
 
 Contact &Contact::operator=(const Contact &other){
   if (this == &other)
-    return (*this);
+    return *this;
   this->index_ = other.index_;
   this->first_name_ = other.first_name_;
   this->last_name_ = other.last_name_;
