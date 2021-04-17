@@ -10,9 +10,9 @@
 #ifndef ZOMBIEEVENT_HPP
 #define ZOMBIEEVENT_HPP
 
-
 class ZombieEvent {
   std::string type_;
+  static const char         name_zombie_[10][10];
  public:
   explicit ZombieEvent(const std::string &type);
 
@@ -26,6 +26,5 @@ class ZombieEvent {
 
   Zombie *randomChump();
 };
-
 
 #endif  // ZOMBIEEVENT_HPP

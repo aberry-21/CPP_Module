@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.13)
 
-project(zombie VERSION 1.0 LANGUAGES CXX)
+project(ex04 VERSION 1.0 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 98)
 
@@ -12,6 +12,4 @@ add_compile_options(
 
 set(CMAKE_CXX_COMPILER "/usr/bin/clang++")
 
-add_executable(${PROJECT_NAME} src/Zombie.cpp src/ZombieEvent.cpp src/main.cpp)
-
-target_include_directories(${PROJECT_NAME} PUBLIC .)
+add_executable(${PROJECT_NAME} ex04.cpp)

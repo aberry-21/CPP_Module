@@ -3,9 +3,10 @@
 //
 
 #include <iostream>
-#include "../includes/ZombieEvent.hpp"
+#include "includes/ZombieEvent.hpp"
 
 int main() {
+  srand(time(nullptr));
   ZombieEvent generator_zombie("Sber");
   Zombie      zombie_alone;
   Zombie      *zombie_random;

@@ -9,8 +9,8 @@
 #include <string>
 
 class Zombie {
-  std::string               name_;
-  std::string               type_;
+  std::string name_;
+  std::string type_;
  public:
   Zombie();
 
@@ -32,6 +32,5 @@ class Zombie {
 
   void announce() const;
 };
-
 
 #endif  // ZOMBIE_HPP

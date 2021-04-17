@@ -5,11 +5,10 @@
 #include "includes/Zombie.hpp"
 #include <iostream>
 
-
 Zombie::Zombie() {}
 
 Zombie::Zombie(const std::string &name, const std::string &type)
-: name_(name), type_(type) {}
+        : name_(name), type_(type) {}
 
 Zombie::~Zombie() {}
 
@@ -21,7 +20,8 @@ Zombie &Zombie::operator=(const Zombie &other) {
   return *this;
 }
 
-Zombie::Zombie(const Zombie &other) : name_(other.name_), type_(other.type_) {}
+Zombie::Zombie(const Zombie &other) : name_(other.name_),
+                                      type_(other.type_) {}
 
 const std::string &Zombie::getName() const {
   return name_;
@@ -41,5 +41,5 @@ void Zombie::setType(const std::string &type) {
 
 void Zombie::announce() const {
   std::cout << "<" << getName() <<
-                  " (" << getType() << ")> Braiiiiiiinnnssss ..." << std::endl;
+            " (" << getType() << ")> Braiiiiiiinnnssss ..." << std::endl;
 }
