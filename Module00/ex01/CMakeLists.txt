@@ -12,6 +12,6 @@ add_compile_options(
 
 set(CMAKE_CXX_COMPILER "/usr/bin/clang++")
 
-add_executable(${PROJECT_NAME} src/Contact.cpp src/PhoneBook.cpp src/main.cpp)
+add_executable(${PROJECT_NAME} src/Contact.cpp src/PhoneBook.cpp src/main.cpp ../../Module01/ex00/main.cpp)
 
 target_include_directories(${PROJECT_NAME} PUBLIC includes/Contact.hpp, includes/PhoneBook.hpp)
