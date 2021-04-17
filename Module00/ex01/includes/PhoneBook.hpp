@@ -34,7 +34,7 @@ class PhoneBook {
 
   PhoneBook();
 
-  ~PhoneBook();
+  virtual ~PhoneBook();
 
   int  AddContact();
 

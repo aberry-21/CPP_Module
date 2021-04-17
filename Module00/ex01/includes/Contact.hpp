@@ -32,7 +32,7 @@ class Contact{
 
   Contact(const Contact &other);
 
-  ~Contact();
+  virtual ~Contact();
 
   void setIndex(int index);
 

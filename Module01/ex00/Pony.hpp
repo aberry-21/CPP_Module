@@ -41,7 +41,7 @@ class Pony {
 
   void setGender(const std::string &gender);
 
-  ~Pony();
+  virtual ~Pony();
 
   Pony();
 
