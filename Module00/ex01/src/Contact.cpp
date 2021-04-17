@@ -11,7 +11,7 @@ birthday_date_(), favorite_(), meal_(), underwear_color_(), darkest_secret_() {}
 
 Contact::~Contact() {}
 
-Contact &Contact::operator=(const Contact &other){
+Contact &Contact::operator=(const Contact &other) {
   if (this == &other)
     return *this;
   this->index_ = other.index_;
@@ -37,14 +37,12 @@ login_(other.login_), postal_address_(other.postal_address_),
 email_address_(other.email_address_), phone_number_(other.phone_number_),
 birthday_date_(other.birthday_date_), favorite_(other.favorite_),
 meal_(other.meal_), underwear_color_(other.underwear_color_),
-darkest_secret_(other.darkest_secret_){}
+darkest_secret_(other.darkest_secret_) {}
 
 Contact::Contact(int index)
-:first_name_(), last_name_(), nickname_(),
+:index_(index), first_name_(), last_name_(), nickname_(),
 login_(), postal_address_(), email_address_(), phone_number_(),
-birthday_date_(), favorite_(), meal_(), underwear_color_(), darkest_secret_() {
-  setIndex(index);
-}
+birthday_date_(), favorite_(), meal_(), underwear_color_(), darkest_secret_() {}
 
 int Contact::getIndex() const {
   return index_;

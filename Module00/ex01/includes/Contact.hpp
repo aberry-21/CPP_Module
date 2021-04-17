@@ -85,7 +85,6 @@ class Contact{
   const std::string &getDarkestSecret() const;
 
   void setDarkestSecret(const std::string &darkestSecret);
-
 };
 
-#endif //CONTACT_HPP
+#endif  // CONTACT_HPP
