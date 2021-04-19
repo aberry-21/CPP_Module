@@ -43,6 +43,7 @@ class FragTrap {
   void                    setArmorDamageReduction(int armorDamageReduction);
 
  private:
+  static const char       responses[5][60];
   static const int        max_energy_points_ = 100;
   static const int        max_hit_points_ = 100;
   std::string             name_;

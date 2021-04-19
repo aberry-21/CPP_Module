@@ -2,8 +2,18 @@
 // Created by Aaron Berry on 4/19/21.
 //
 
-#include "includes/FragTrap.h"
 #include <iostream>
+#include <cstdlib>
+#include "includes/FragTrap.h"
+
+//==========================  Static Field  ====================================
+
+char const  FragTrap::responses[5][60] =
+        {"Ratattattattatta!", "Laaasers!!", "Powpowpowpow!",
+         "Pew-pew, pew-pew-pewpew!",
+         "Everybody, dance time! Da-da-da-dun-daaa-da-da-da-dun-daaa!"};
+
+//==============================================================================
 
 FragTrap::FragTrap()
 : name_("No name"), hit_points_(100), energy_points_(100), level_(1),
@@ -78,8 +88,15 @@ void FragTrap::BeRepaired(unsigned int amount) {
 }
 
 void FragTrap::VaulthunterDotExe(const std::string &target) {
-
-  {"Ratattattattatta!", "Laaasers!!", "Powpowpowpow!", "Pew-pew, pew-pew-pewpew!", "Everybody, dance time! Da-da-da-dun-daaa-da-da-da-dun-daaa!"};
+  if (energy_points_ < 25) {
+    std::cout << "No enough energy" << std::endl;
+    return;
+  }
+  static unsigned int seed = time(nullptr);
+  int random_index = rand_r(&seed) % 5;
+  std::cout << "FR4G-TP " << name_ << "attacks " << target << ": ";
+  std::cout << responses[random_index] << std::endl;
+  energy_points_ -= 25;
 }
 
 const std::string &FragTrap::getName() const {
@@ -99,6 +116,9 @@ void FragTrap::setHitPoints(int hitPoints) {
     hitPoints = 0;
   }
   hit_points_ = hitPoints;
+  if (hit_points_ > max_hit_points_) {
+    hit_points_ = 100;
+  }
 }
 
 int FragTrap::getEnergyPoints() const {
@@ -110,6 +130,9 @@ void FragTrap::setEnergyPoints(int energyPoints) {
     energyPoints = 0;
   }
   energy_points_ = energyPoints;
+  if (energy_points_ > max_energy_points_) {
+    energy_points_ = 100;
+  }
 }
 
 int FragTrap::getLevel() const {
