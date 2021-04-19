@@ -9,3 +9,4 @@ re:			fclean all
 
 norm:
 	@cpplint --filter=-legal/copyright --recursive .
+#./Sed_is_for_losers hello hello by

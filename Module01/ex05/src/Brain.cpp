@@ -10,7 +10,8 @@
 
 Brain::Brain() {}
 
-Brain::Brain(const std::string &owner, short iq) : owner_(owner), iq_(iq) {}
+Brain::Brain(const std::string &owner, unsigned int iq)
+: owner_(owner), iq_(iq) {}
 
 Brain::~Brain() {}
 
@@ -32,11 +33,11 @@ void Brain::setOwner(const std::string &owner) {
   owner_ = owner;
 }
 
-short Brain::getIq() const {
+unsigned int Brain::getIq() const {
   return iq_;
 }
 
-void Brain::setIq(short iq) {
+void Brain::setIq(unsigned int iq) {
   iq_ = iq;
 }
 

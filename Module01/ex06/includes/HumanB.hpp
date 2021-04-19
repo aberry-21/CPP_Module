@@ -6,15 +6,15 @@
 #ifndef UNNECESSARY_VIOLENCE_HUMANB_HPP
 #define UNNECESSARY_VIOLENCE_HUMANB_HPP
 
-#include "includes/Weapon.hpp"
 #include <string>
+#include "includes/Weapon.hpp"
 
 class HumanB {
   std::string   name_;
   const Weapon  *weapon_;
 
  public:
-  HumanB(const std::string &name);
+  explicit HumanB(const std::string &name);
 
   virtual ~HumanB();
 
@@ -27,4 +27,4 @@ class HumanB {
   void attack() const;
 };
 
-#endif //UNNECESSARY_VIOLENCE_HUMANB_HPP
+#endif  // UNNECESSARY_VIOLENCE_HUMANB_HPP

@@ -5,7 +5,7 @@
 #include "includes/HumanA.hpp"
 #include <iostream>
 
-HumanA::HumanA(const std::string &name, Weapon &weapon) : name_(name),
+HumanA::HumanA(const std::string &name, const Weapon &weapon) : name_(name),
                                                           weapon_(weapon) {}
 
 HumanA::~HumanA() {}

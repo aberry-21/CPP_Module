@@ -9,12 +9,12 @@
 #include <string>
 
 class Brain {
-  std::string   owner_;
-  short         iq_;
+  std::string          owner_;
+  unsigned int         iq_;
  public:
   Brain();
 
-  explicit Brain(const std::string &owner, short iq);
+  explicit Brain(const std::string &owner, unsigned int iq);
 
   virtual ~Brain();
 
@@ -26,9 +26,9 @@ class Brain {
 
   void setOwner(const std::string &owner);
 
-  short getIq() const;
+  unsigned int getIq() const;
 
-  void setIq(short iq);
+  void setIq(unsigned int iq);
 
   std::string identify() const;
 };

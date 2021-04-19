@@ -8,7 +8,7 @@
 Human::Human() :brain_(new Brain("human", 30)) {
 }
 
-Human::Human(const Human &other) : brain_(new Brain(*other.brain_)){
+Human::Human(const Human &other) : brain_(new Brain(*other.brain_)) {
 }
 
 Human::~Human() {

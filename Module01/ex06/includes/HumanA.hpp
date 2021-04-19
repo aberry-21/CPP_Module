@@ -6,15 +6,15 @@
 #ifndef UNNECESSARY_VIOLENCE_HUMANA_HPP
 #define UNNECESSARY_VIOLENCE_HUMANA_HPP
 
-#include "includes/Weapon.hpp"
 #include <string>
+#include "includes/Weapon.hpp"
 
 class HumanA {
   std::string   name_;
   const Weapon  &weapon_;
 
  public:
-  HumanA(const std::string &name, Weapon &weapon);
+  HumanA(const std::string &name, const Weapon &weapon);
 
   virtual ~HumanA();
 
@@ -26,4 +26,4 @@ class HumanA {
 };
 
 
-#endif //UNNECESSARY_VIOLENCE_HUMANA_HPP
+#endif  // UNNECESSARY_VIOLENCE_HUMANA_HPP
