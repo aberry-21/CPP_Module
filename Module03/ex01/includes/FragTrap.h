@@ -42,11 +42,13 @@ class FragTrap {
   int                     getArmorDamageReduction() const;
   void                    setArmorDamageReduction(int armorDamageReduction);
 
-  int                     getMaxEnergyPoints() const;
-  void                    setMaxEnergyPoints(int maxEnergyPoints);
+  int getMaxEnergyPoints() const;
 
-  int                     getMaxHitPoints() const;
-  void                    setMaxHitPoints(int maxHitPoints);
+  void setMaxEnergyPoints(int maxEnergyPoints);
+
+  int getMaxHitPoints() const;
+
+  void setMaxHitPoints(int maxHitPoints);
 
  private:
   static const char       responses[5][60];

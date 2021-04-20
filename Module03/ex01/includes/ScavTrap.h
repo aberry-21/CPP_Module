@@ -1,25 +1,24 @@
 //
-// Created by Aaron Berry on 4/19/21.
+// Created by Aaron Berry on 4/20/21.
 //
 
-#pragma once
-#ifndef FRAGTRAP_H
-#define FRAGTRAP_H
+#ifndef SCAVTRAP_H
+#define SCAVTRAP_H
 
 #include <string>
 
-class FragTrap {
+class ScavTrap {
  public:
-  explicit FragTrap(const std::string &name);
-  FragTrap();
-  virtual ~FragTrap();
-  FragTrap(FragTrap const &other);
-  FragTrap                &operator=(FragTrap const &other);
+  explicit ScavTrap(const std::string &name);
+  ScavTrap();
+  virtual ~ScavTrap();
+  ScavTrap(ScavTrap const &other);
+  ScavTrap                &operator=(ScavTrap const &other);
   void                    RangedAttack(std::string const & target);
   void                    MeleeAttack(std::string const & target);
   void                    TakeDamage(unsigned int amount);
   void                    BeRepaired(unsigned int amount);
-  void                    VaulthunterDotExe(std::string const &target);
+  void                    ChallengeNewcomer(std::string const &target);
 
   const std::string       &getName() const;
   void                    setName(const std::string &name);
@@ -42,11 +41,13 @@ class FragTrap {
   int                     getArmorDamageReduction() const;
   void                    setArmorDamageReduction(int armorDamageReduction);
 
-  int                     getMaxEnergyPoints() const;
-  void                    setMaxEnergyPoints(int maxEnergyPoints);
+  int getMaxEnergyPoints() const;
 
-  int                     getMaxHitPoints() const;
-  void                    setMaxHitPoints(int maxHitPoints);
+  void setMaxEnergyPoints(int maxEnergyPoints);
+
+  int getMaxHitPoints() const;
+
+  void setMaxHitPoints(int maxHitPoints);
 
  private:
   static const char       responses[5][60];
@@ -62,4 +63,4 @@ class FragTrap {
 };
 
 
-#endif  // FRAGTRAP_H
+#endif  // SCAVTRAP_H

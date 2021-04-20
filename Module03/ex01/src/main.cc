@@ -6,29 +6,30 @@
 #include <cstdlib>
 
 #include "includes/FragTrap.h"
+#include "includes/ScavTrap.h"
 
 int main() {
   srand(time(nullptr));
-  FragTrap  object_frag_trap("no name");
   FragTrap  rarity("Rarity");
-  FragTrap  pinkie("Pinkie Pie");
+  ScavTrap  pinkie("Pinkie Pie");
+  ScavTrap  object_scav_trap("Pinkie Pie");
 
-  std::cout << "FragTrap attributes :"<<std::endl;
-  std::cout << " HitPoints: " << object_frag_trap.getHitPoints() << std::endl;
-  std::cout << " MaxHitPoints: " << object_frag_trap.getMaxHitPoints() <<
-                                                                    std::endl;
-  std::cout << " EnergyPoints: " << object_frag_trap.getEnergyPoints() <<
-                                                                    std::endl;
-  std::cout << " MaxEnergyPoints: " << object_frag_trap.getMaxEnergyPoints() <<
-                                                                    std::endl;
-  std::cout << " Level: " << object_frag_trap.getLevel() << std::endl;
-  std::cout << " Name: " << object_frag_trap.getName() << std::endl;
-  std::cout << " MeleeAttackDamage: " << object_frag_trap.getMeleeAttackDamage()
-                                                                   << std::endl;
+  std::cout << "ScavTrap attributes :"<<std::endl;
+  std::cout << " HitPoints: " << object_scav_trap.getHitPoints() << std::endl;
+  std::cout << " MaxHitPoints: " << object_scav_trap.getMaxHitPoints() <<
+            std::endl;
+  std::cout << " EnergyPoints: " << object_scav_trap.getEnergyPoints() <<
+            std::endl;
+  std::cout << " MaxEnergyPoints: " << object_scav_trap.getMaxEnergyPoints() <<
+            std::endl;
+  std::cout << " Level: " << object_scav_trap.getLevel() << std::endl;
+  std::cout << " Name: " << object_scav_trap.getName() << std::endl;
+  std::cout << " MeleeAttackDamage: " << object_scav_trap.getMeleeAttackDamage()
+            << std::endl;
   std::cout << " RangedAttackDamage: "
-            << object_frag_trap.getRangedAttackDamage() << std::endl;
+            << object_scav_trap.getRangedAttackDamage() << std::endl;
   std::cout << " ArmorDamageReduction: "
-            << object_frag_trap.getArmorDamageReduction() << std::endl;
+            << object_scav_trap.getArmorDamageReduction() << std::endl;
 
   std::cout << std::endl;
   rarity.RangedAttack(pinkie.getName());
@@ -61,7 +62,7 @@ int main() {
 
   std::cout << "vaulthunterDotExe for (\"Rarity\")" << std::endl;
   for (int i = 0; i < 5; ++i) {
-    pinkie.VaulthunterDotExe(rarity.getName());
+    pinkie.ChallengeNewcomer(rarity.getName());
   }
 
   return (0);

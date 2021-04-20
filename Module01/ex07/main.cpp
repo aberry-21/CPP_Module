@@ -42,6 +42,8 @@ static void ReplaceAndWriteInFile(char *argv[]) {
     else
       in_file << line.data();
   }
+  filename.close();
+  out_file.close();
 }
 
 int main(int argc, char *argv[]) {

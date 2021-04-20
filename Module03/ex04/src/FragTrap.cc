@@ -16,18 +16,18 @@ char const  FragTrap::responses[5][60] =
 //==============================================================================
 
 FragTrap::FragTrap()
-: max_energy_points_(100), max_hit_points_(100), name_("No name"),
-  hit_points_(100), energy_points_(100), level_(1),
+: ClapTrap(), max_energy_points_(100), max_hit_points_(100),
+  hit_points_(100), energy_points_(100),
   melee_attack_damage_(30), ranged_attack_damage_(20),
-  armor_damage_reduction_(5) {
+  armor_damage_reduction_(3) {
   std::cout << name_ << " FragTrap default constructor called" << std::endl;
 }
 
 FragTrap::FragTrap(const std::string &name)
-: max_energy_points_(100), max_hit_points_(100), name_(name),
-  hit_points_(100), energy_points_(100), level_(1),
+: ClapTrap(name), max_energy_points_(100), max_hit_points_(100),
+  hit_points_(100), energy_points_(100),
   melee_attack_damage_(30), ranged_attack_damage_(20),
-  armor_damage_reduction_(5) {
+  armor_damage_reduction_(3) {
   std::cout << name_ << " FragTrap default constructor called" << std::endl;
 }
 
@@ -36,24 +36,24 @@ FragTrap::~FragTrap() {
 }
 
 FragTrap::FragTrap(const FragTrap &other)
-: max_energy_points_(other.max_energy_points_),
+: ClapTrap(other), max_energy_points_(other.max_energy_points_),
   max_hit_points_(other.max_energy_points_),
-  name_(other.name_), hit_points_(other.hit_points_),
-  energy_points_(other.energy_points_), level_(other.level_),
+  hit_points_(other.hit_points_),
+  energy_points_(other.energy_points_),
   melee_attack_damage_(other.melee_attack_damage_),
   ranged_attack_damage_(other.armor_damage_reduction_),
   armor_damage_reduction_(other.ranged_attack_damage_) {
   std::cout << name_ << " FragTrap default constructor called" << std::endl;
 }
 
-FragTrap &FragTrap::operator=(const FragTrap &other) {
+FragTrap &FragTrap::operator=(const FragTrap &other)  {
   if (this == &other) {
     return *this;
   }
+  max_energy_points_ = other.max_energy_points_;
+  max_hit_points_ = other.max_energy_points_;
   name_ = other.name_;
   hit_points_ = other.hit_points_;
-  max_energy_points_ = other.max_energy_points_;
-  max_hit_points_ = other.max_hit_points_;
   energy_points_ = other.energy_points_;
   level_ = other.level_;
   melee_attack_damage_ = other.melee_attack_damage_;
@@ -105,14 +105,6 @@ void FragTrap::VaulthunterDotExe(const std::string &target) {
   energy_points_ -= 25;
 }
 
-const std::string &FragTrap::getName() const {
-  return name_;
-}
-
-void FragTrap::setName(const std::string &name) {
-  name_ = name;
-}
-
 int FragTrap::getHitPoints() const {
   return hit_points_;
 }
@@ -139,17 +131,6 @@ void FragTrap::setEnergyPoints(int energyPoints) {
   if (energy_points_ > max_energy_points_) {
     energy_points_ = 100;
   }
-}
-
-int FragTrap::getLevel() const {
-  return level_;
-}
-
-void FragTrap::setLevel(int level) {
-  if (level < 0) {
-    level = 0;
-  }
-  level_ = level;
 }
 
 int FragTrap::getMeleeAttackDamage() const {
