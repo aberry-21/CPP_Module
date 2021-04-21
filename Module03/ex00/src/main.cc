@@ -13,7 +13,7 @@ int main() {
   FragTrap  rarity("Rarity");
   FragTrap  pinkie("Pinkie Pie");
 
-  std::cout << "FragTrap attributes :"<<std::endl;
+  std::cout << "FragTrap attributes :" <<std::endl;
   std::cout << " HitPoints: " << object_frag_trap.getHitPoints() << std::endl;
   std::cout << " MaxHitPoints: " << object_frag_trap.getMaxHitPoints() <<
                                                                     std::endl;

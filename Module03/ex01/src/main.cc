@@ -14,7 +14,7 @@ int main() {
   ScavTrap  pinkie("Pinkie Pie");
   ScavTrap  object_scav_trap("Pinkie Pie");
 
-  std::cout << "ScavTrap attributes :"<<std::endl;
+  std::cout << "ScavTrap attributes :" << std::endl;
   std::cout << " HitPoints: " << object_scav_trap.getHitPoints() << std::endl;
   std::cout << " MaxHitPoints: " << object_scav_trap.getMaxHitPoints() <<
             std::endl;

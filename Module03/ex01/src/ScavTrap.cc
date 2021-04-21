@@ -15,18 +15,18 @@ char const  ScavTrap::responses[5][60] =
 //==============================================================================
 
 ScavTrap::ScavTrap()
-: max_energy_points_(100), max_hit_points_(100),
-  name_("No name"), hit_points_(100), energy_points_(100), level_(1),
-  melee_attack_damage_(30), ranged_attack_damage_(20),
+: max_energy_points_(50), max_hit_points_(100),
+  name_("No name"), hit_points_(100), energy_points_(50), level_(1),
+  melee_attack_damage_(20), ranged_attack_damage_(15),
   armor_damage_reduction_(3) {
   std::cout << name_ << " ScavTrap default constructor called" << std::endl;
 }
 
 ScavTrap::ScavTrap(const std::string &name)
-: max_energy_points_(100), max_hit_points_(100),
-  name_(name), hit_points_(100), energy_points_(100), level_(1),
-  melee_attack_damage_(30), ranged_attack_damage_(20),
-  armor_damage_reduction_(3) {
+: max_energy_points_(50), max_hit_points_(100),
+  name_(name), hit_points_(100), energy_points_(50), level_(1),
+  melee_attack_damage_(20), ranged_attack_damage_(15),
+  armor_damage_reduction_(3)  {
   std::cout << name_ << " ScavTrap default constructor called" << std::endl;
 }
 
