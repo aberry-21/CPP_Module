@@ -2,6 +2,7 @@
 // Created by Aaron Berry on 4/20/21.
 //
 
+#pragma once
 #ifndef NINJATRAP_H
 #define NINJATRAP_H
 

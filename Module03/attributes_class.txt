@@ -1,0 +1,47 @@
+The class will be named ScavTrap, and will have these attributes:
+• Hit points (100)
+• Max hit points (100)
+• Energy points (50)
+• Max energy points (50)
+• Level (1)
+• Name (Parameter of constructor)
+• Melee attack damage (20)
+• Ranged attack damage (15)
+• Armor damage reduction (3)
+
+Using everything you have done before, make a NinjaTrap, with the following attributes:
+• Hit points (60)
+• Max hit points (60)
+• Energy points (120)
+• Max energy points (120)
+• Level (1)
+• Name (Parameter of constructor)
+• Melee attack damage (60)
+• Ranged attack damage (5)
+• Armor damage reduction (0)
+
+The class will be called FragTrap, and will have the following attributes, initialized
+to the specified values:
+• Hit points (100)
+• Max hit points (100)
+• Energy points (100)
+• Max energy points (100)
+• Level (1)
+• Name (Parameter of constructor)
+• Melee attack damage (30)
+• Ranged attack damage (20)
+• Armor damage reduction (5)
+
+It will be named SuperTrap, and it will inherit from both the FragTrap AND the NinjaTrap.
+Its attributes and functions will be chosen from either of its parent classes:
+• Hit points (Fragtrap) == (100)
+• Max hit points (Fragtrap) == (100)
+• Energy points (Ninjatrap) == (120)
+• Max energy points (Ninjatrap) == (120)
+• Level (1)
+• Name (Parameter of constructor)
+• Melee attack damage (Ninjatrap) == (60)
+• Ranged attack damage (Fragtrap) == (20)
+• Armor damage reduction (Fragtrap) == (5)
+• rangedAttack (Fragtrap)
+• meleeAttack (Ninjatrap)

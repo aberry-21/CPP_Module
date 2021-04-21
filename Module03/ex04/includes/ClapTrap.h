@@ -51,6 +51,7 @@ class ClapTrap {
  protected:
   int                     level_;
   std::string             name_;
+
  private:
   int                     max_energy_points_;
   int                     max_hit_points_;

@@ -2,6 +2,7 @@
 // Created by Aaron Berry on 4/20/21.
 //
 
+
 #include "includes/SuperTrap.h"
 
 #include <iostream>
@@ -19,7 +20,7 @@ armor_damage_reduction_(FragTrap::getArmorDamageReduction()) {
 }
 
 SuperTrap::SuperTrap(const std::string &name)
-: ClapTrap(name),max_energy_points_(NinjaTrap::getMaxEnergyPoints()),
+: ClapTrap(name), max_energy_points_(NinjaTrap::getMaxEnergyPoints()),
   max_hit_points_(FragTrap::getMaxHitPoints()),
   hit_points_(FragTrap::getHitPoints()),
   energy_points_(NinjaTrap::getEnergyPoints()),
@@ -65,7 +66,7 @@ void SuperTrap::RangedAttack(const std::string &target) {
 }
 
 void SuperTrap::MeleeAttack(const std::string &target) {
-  NinjaTrap::RangedAttack(target);
+  NinjaTrap::MeleeAttack(target);
 }
 
 void SuperTrap::TakeDamage(unsigned int amount) {

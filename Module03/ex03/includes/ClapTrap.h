@@ -41,6 +41,12 @@ class ClapTrap {
   int                     getArmorDamageReduction() const;
   void                    setArmorDamageReduction(int armorDamageReduction);
 
+  int                     getMaxEnergyPoints() const;
+  void                    setMaxEnergyPoints(int maxEnergyPoints);
+
+  int                     getMaxHitPoints() const;
+  void                    setMaxHitPoints(int maxHitPoints);
+
  protected:
   int                     max_energy_points_;
   int                     max_hit_points_;

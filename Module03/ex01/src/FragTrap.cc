@@ -19,7 +19,7 @@ FragTrap::FragTrap()
 : max_energy_points_(100), max_hit_points_(100), name_("No name"),
   hit_points_(100), energy_points_(100), level_(1),
   melee_attack_damage_(30), ranged_attack_damage_(20),
-  armor_damage_reduction_(3) {
+  armor_damage_reduction_(5) {
   std::cout << name_ << " FragTrap default constructor called" << std::endl;
 }
 
@@ -27,7 +27,7 @@ FragTrap::FragTrap(const std::string &name)
 : max_energy_points_(100), max_hit_points_(100), name_(name),
   hit_points_(100), energy_points_(100), level_(1),
   melee_attack_damage_(30), ranged_attack_damage_(20),
-  armor_damage_reduction_(3) {
+  armor_damage_reduction_(5) {
   std::cout << name_ << " FragTrap default constructor called" << std::endl;
 }
 

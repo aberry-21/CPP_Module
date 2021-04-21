@@ -6,9 +6,12 @@
 #ifndef SUPERTRAP_H
 #define SUPERTRAP_H
 
+#include <string>
+
 #include "includes/FragTrap.h"
 #include "includes/ScavTrap.h"
 #include "includes/NinjaTrap.h"
+
 
 class SuperTrap : virtual public FragTrap, virtual public NinjaTrap{
  public:
@@ -42,6 +45,7 @@ class SuperTrap : virtual public FragTrap, virtual public NinjaTrap{
 
   int                     getMaxHitPoints() const;
   void                    setMaxHitPoints(int maxHitPoints);
+
  private:
   int                     max_energy_points_;
   int                     max_hit_points_;

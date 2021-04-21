@@ -9,7 +9,7 @@
 NinjaTrap::NinjaTrap()
 : ClapTrap(), max_energy_points_(120), max_hit_points_(60),
 hit_points_(60), energy_points_(120),
-melee_attack_damage_(60), ranged_attack_damage_(3),
+melee_attack_damage_(60), ranged_attack_damage_(5),
 armor_damage_reduction_(0) {
   std::cout << name_ << " NinjaTrap default constructor called" << std::endl;
 }
@@ -17,7 +17,7 @@ armor_damage_reduction_(0) {
 NinjaTrap::NinjaTrap(const std::string &name)
 : ClapTrap(name), max_energy_points_(120), max_hit_points_(60),
   hit_points_(60), energy_points_(120),
-  melee_attack_damage_(60), ranged_attack_damage_(3),
+  melee_attack_damage_(60), ranged_attack_damage_(5),
   armor_damage_reduction_(0) {
   std::cout << name_ << " NinjaTrap default constructor called" << std::endl;
 }
@@ -62,7 +62,7 @@ void NinjaTrap::RangedAttack(const std::string &target) {
 void NinjaTrap::MeleeAttack(const std::string &target) {
   std::cout << "NinjaTrap " << name_ << " attacks " << target
             << ", causing " << melee_attack_damage_
-            << " points of damage!" << std::endl;
+            << " points of damage! (!)" << std::endl;
 }
 
 void NinjaTrap::TakeDamage(unsigned int amount) {
@@ -85,21 +85,19 @@ void NinjaTrap::BeRepaired(unsigned int amount) {
 }
 
 void NinjaTrap::ninjaShoeBox(const ClapTrap &target) {
-  if (energy_points_ < 25)
+  if (energy_points_ < 25) {
     std::cout << "Need more energy points" << std::endl;
-  else
-  {
+  } else {
     std::cout << "NinjaTrap " << name_ << " attacks ClapTrap "
-                                              << target.getName() << std::endl;
+              << target.getName() << std::endl;
     energy_points_ -= 25;
   }
 }
 
 void NinjaTrap::ninjaShoeBox(const NinjaTrap &target) {
-  if (energy_points_ < 25)
+  if (energy_points_ < 25) {
     std::cout << "Need more energy points" << std::endl;
-  else
-  {
+  } else {
     std::cout << "NinjaTrap " << name_ << " attacks NinjaTrap "
               << target.getName() << std::endl;
     energy_points_ -= 25;
@@ -107,10 +105,9 @@ void NinjaTrap::ninjaShoeBox(const NinjaTrap &target) {
 }
 
 void NinjaTrap::ninjaShoeBox(const ScavTrap &target) {
-  if (energy_points_ < 25)
+  if (energy_points_ < 25) {
     std::cout << "Need more energy points" << std::endl;
-  else
-  {
+  } else {
     std::cout << "NinjaTrap " << name_ << " attacks ScavTrap "
               << target.getName() << std::endl;
     energy_points_ -= 25;
@@ -118,10 +115,9 @@ void NinjaTrap::ninjaShoeBox(const ScavTrap &target) {
 }
 
 void NinjaTrap::ninjaShoeBox(const FragTrap &target) {
-  if (energy_points_ < 25)
+  if (energy_points_ < 25) {
     std::cout << "Need more energy points" << std::endl;
-  else
-  {
+  } else {
     std::cout << "NinjaTrap " << name_ << " attacks FragTrap "
               << target.getName() << std::endl;
     energy_points_ -= 25;

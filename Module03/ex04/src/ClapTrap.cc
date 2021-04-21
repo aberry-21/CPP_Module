@@ -6,20 +6,20 @@
 #include "includes/ClapTrap.h"
 
 ClapTrap::ClapTrap()
-        : level_(1), name_("No name"),
-          max_energy_points_(100), max_hit_points_(100),
-          hit_points_(100), energy_points_(100),
-          melee_attack_damage_(30), ranged_attack_damage_(20),
-          armor_damage_reduction_(3) {
+: level_(1), name_("No name"),
+  max_energy_points_(100), max_hit_points_(100),
+  hit_points_(100), energy_points_(100),
+  melee_attack_damage_(30), ranged_attack_damage_(20),
+  armor_damage_reduction_(3) {
   std::cout << name_ << " ClapTrap default constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(const std::string &name)
-        : level_(1), name_(name),
-          max_energy_points_(100), max_hit_points_(100),
-          hit_points_(100), energy_points_(100),
-          melee_attack_damage_(30), ranged_attack_damage_(20),
-          armor_damage_reduction_(3) {
+: level_(1), name_(name),
+  max_energy_points_(100), max_hit_points_(100),
+  hit_points_(100), energy_points_(100),
+  melee_attack_damage_(30), ranged_attack_damage_(20),
+  armor_damage_reduction_(3) {
   std::cout << name_ << " ClapTrap default constructor called" << std::endl;
 }
 
@@ -28,14 +28,14 @@ ClapTrap::~ClapTrap() {
 }
 
 ClapTrap::ClapTrap(const ClapTrap &other)
-        : level_(other.level_), name_(other.name_),
-          max_energy_points_(other.max_energy_points_),
-          max_hit_points_(other.max_energy_points_),
-          hit_points_(other.hit_points_),
-          energy_points_(other.energy_points_),
-          melee_attack_damage_(other.melee_attack_damage_),
-          ranged_attack_damage_(other.armor_damage_reduction_),
-          armor_damage_reduction_(other.ranged_attack_damage_) {
+: level_(other.level_), name_(other.name_),
+  max_energy_points_(other.max_energy_points_),
+  max_hit_points_(other.max_energy_points_),
+  hit_points_(other.hit_points_),
+  energy_points_(other.energy_points_),
+  melee_attack_damage_(other.melee_attack_damage_),
+  ranged_attack_damage_(other.armor_damage_reduction_),
+  armor_damage_reduction_(other.ranged_attack_damage_) {
   std::cout << name_ << " ClapTrap default constructor called" << std::endl;
 }
 

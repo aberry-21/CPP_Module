@@ -64,7 +64,7 @@ void NinjaTrap::RangedAttack(const std::string &target) {
 void NinjaTrap::MeleeAttack(const std::string &target) {
   std::cout << "NinjaTrap " << name_ << " attacks " << target
             << ", causing " << melee_attack_damage_
-            << " points of damage!" << std::endl;
+            << " points of damage! (!) " << std::endl;
 }
 
 void NinjaTrap::TakeDamage(unsigned int amount) {
@@ -87,10 +87,9 @@ void NinjaTrap::BeRepaired(unsigned int amount) {
 }
 
 void NinjaTrap::ninjaShoeBox(const ClapTrap &target) {
-  if (energy_points_ < 25)
+  if (energy_points_ < 25) {
     std::cout << "Need more energy points" << std::endl;
-  else
-  {
+  } else {
     std::cout << "NinjaTrap " << name_ << " attacks ClapTrap "
                                               << target.getName() << std::endl;
     energy_points_ -= 25;
@@ -98,10 +97,9 @@ void NinjaTrap::ninjaShoeBox(const ClapTrap &target) {
 }
 
 void NinjaTrap::ninjaShoeBox(const NinjaTrap &target) {
-  if (energy_points_ < 25)
+  if (energy_points_ < 25) {
     std::cout << "Need more energy points" << std::endl;
-  else
-  {
+  } else {
     std::cout << "NinjaTrap " << name_ << " attacks NinjaTrap "
               << target.getName() << std::endl;
     energy_points_ -= 25;
@@ -109,10 +107,9 @@ void NinjaTrap::ninjaShoeBox(const NinjaTrap &target) {
 }
 
 void NinjaTrap::ninjaShoeBox(const ScavTrap &target) {
-  if (energy_points_ < 25)
+  if (energy_points_ < 25) {
     std::cout << "Need more energy points" << std::endl;
-  else
-  {
+  } else {
     std::cout << "NinjaTrap " << name_ << " attacks ScavTrap "
               << target.getName() << std::endl;
     energy_points_ -= 25;
@@ -120,10 +117,9 @@ void NinjaTrap::ninjaShoeBox(const ScavTrap &target) {
 }
 
 void NinjaTrap::ninjaShoeBox(const FragTrap &target) {
-  if (energy_points_ < 25)
+  if (energy_points_ < 25) {
     std::cout << "Need more energy points" << std::endl;
-  else
-  {
+  } else {
     std::cout << "NinjaTrap " << name_ << " attacks FragTrap "
               << target.getName() << std::endl;
     energy_points_ -= 25;

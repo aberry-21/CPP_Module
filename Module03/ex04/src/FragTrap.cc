@@ -19,7 +19,7 @@ FragTrap::FragTrap()
 : ClapTrap(), max_energy_points_(100), max_hit_points_(100),
   hit_points_(100), energy_points_(100),
   melee_attack_damage_(30), ranged_attack_damage_(20),
-  armor_damage_reduction_(3) {
+  armor_damage_reduction_(5) {
   std::cout << name_ << " FragTrap default constructor called" << std::endl;
 }
 
@@ -27,7 +27,7 @@ FragTrap::FragTrap(const std::string &name)
 : ClapTrap(name), max_energy_points_(100), max_hit_points_(100),
   hit_points_(100), energy_points_(100),
   melee_attack_damage_(30), ranged_attack_damage_(20),
-  armor_damage_reduction_(3) {
+  armor_damage_reduction_(5) {
   std::cout << name_ << " FragTrap default constructor called" << std::endl;
 }
 
@@ -65,7 +65,7 @@ FragTrap &FragTrap::operator=(const FragTrap &other)  {
 void FragTrap::RangedAttack(const std::string &target) {
   std::cout << "FR4G-TP " << name_ << "attacks " << target
             << " at range, causing " << ranged_attack_damage_
-            << " points of damage!" << std::endl;
+            << " points of damage! (!)" << std::endl;
 }
 
 void FragTrap::MeleeAttack(const std::string &target) {
