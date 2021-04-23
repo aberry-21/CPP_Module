@@ -5,9 +5,9 @@ project(purify_it VERSION 1.0 LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 98)
 
 add_compile_options(
-#        -Werror
-#        -Wall
-#        -Wextra
+        -Werror
+        -Wall
+        -Wextra
 )
 
 set(CMAKE_CXX_COMPILER "/usr/bin/clang++")

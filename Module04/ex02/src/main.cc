@@ -2,110 +2,34 @@
 // Created by Aaron Berry on 4/21/21.
 //
 
-#include "iostream"
-#include <new>
+#include <iostream>
 
+#include "includes/ISpaceMarine.h"
+#include "includes/ISquad.h"
+#include "includes/Squad.h"
+#include "includes/TacticalMarine.h"
+#include "includes/AssaultTerminator.h"
 
-class Test {
- public:
-  Test() {
-    std::cout << "constructor" << std::endl;
+int     main() {
+  ISpaceMarine* bob = new TacticalMarine;
+  ISpaceMarine* jim = new AssaultTerminator;
+  ISquad* vlc = new Squad;
+  vlc->push(bob);
+  vlc->push(jim);
+  for (int i = 0; i < vlc->getCount(); ++i)
+  {
+    ISpaceMarine* cur = vlc->getUnit(i);
+    cur->battleCry();
+    cur->rangedAttack();
+    cur->meleeAttack();
   }
-};
-
-
-
-template <class T>
-struct RemoveConst
-{
-  typedef T type;
-};
-
-template <class T>
-struct RemoveConst<const T>
-{
-  typedef T type;
-};
-
-//const_cast<     typename RemoveConst<T>::type        *              >(p)
-
-
-template<typename T>
-class Allocator {
- public :
-  //    typedefs
-  typedef T value_type;
-  typedef value_type* pointer;
-  typedef const value_type* const_pointer;
-  typedef value_type& reference;
-  typedef const value_type& const_reference;
-  typedef std::size_t size_type;
-  typedef std::ptrdiff_t difference_type;
-
- public :
-  //    convert an allocator<T> to allocator<U>
-  template<typename U>
-  struct rebind {
-    typedef Allocator<U> other;
-  };
-
- public :
-  explicit Allocator() {}
-  ~Allocator() {}
-  explicit Allocator(Allocator const&) {}
-  template<typename U>
-  explicit Allocator(Allocator<U> const&) {}
-
-  //    address
-  pointer address(reference r) { return &r; }
-//const_pointer address(const_reference r) { return &r; }
-
-  //    memory allocation
-  pointer allocate(size_type cnt, typename std::allocator<void>::const_pointer = nullptr) {
-    return reinterpret_cast<pointer>(::operator new(cnt * sizeof (T)));
-  }
-  void deallocate(pointer p, size_type) {
-    ::operator delete(p);
-  }
-
-  //    size
-  size_type max_size() const {
-    return std::numeric_limits<size_type>::max() / sizeof(T);
-  }
-
-  //    construction/destruction
-  void construct(pointer p, const T& t) { new(const_cast<typename RemoveConst<T>::type*>(p)) T(t); }
-  void destroy(pointer p) { p->~T(); }
-
-  bool operator==(Allocator const&) { return true; }
-  bool operator!=(Allocator const& a) { return !operator==(a); }
-};    //    end of class Allocator
-
-
-typedef const char t;
-
-template<typename T>
-class TemplClass
-{
- public:
-  static void generic() {std::cout << "char" << std::endl;}
-};
-
-template<typename T>
-class TemplClass<const T>
-{
- public:
-  static void generic() {std::cout << "const char" << std::endl;}
-  typedef T type;
-};
-
-int main() {
-//  std::allocator<Test> alloc;
-//  Allocator<Test> nash;
-//
-//  alloc.allocate(10);
-//  nash.allocate(10);
-
-  new Test;
+  delete vlc;
+  ISquad *squad = new Squad;
+  ISpaceMarine *unit = new AssaultTerminator;
+  for (int i = 0; i < 100; ++i)
+    squad->push(new TacticalMarine);
+  squad->push(unit);
+  squad->push(unit);
+  delete squad;
   return 0;
 }
