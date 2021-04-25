@@ -2,6 +2,8 @@
 // Created by Aaron Berry on 4/23/21.
 //
 
+#pragma once
+
 # include <string>
 
 # include "AMateria.h"
@@ -9,14 +11,14 @@
 
 class Character : public ICharacter {
  public:
-  Character(const std::string& name);
+  explicit Character(const std::string& name);
   Character(Character const &other);
   virtual ~Character();
   Character           &operator=(Character const &other);
   std::string const   &getName() const;
   void                equip(AMateria* m);
   void                unequip(int idx);
-  void                use(int idx, ICharacter& target);
+  void                use(int idx, const ICharacter& target);
 
  private:
   std::string         name_;

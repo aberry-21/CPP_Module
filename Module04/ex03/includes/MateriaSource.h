@@ -2,14 +2,15 @@
 // Created by Aaron Berry on 4/23/21.
 //
 
+#pragma once
+
 #include <string>
 #include <cstdint>
 
 #include "IMateriaSource.h"
 #include "AMateria.h"
 
-class MateriaSource : public IMateriaSource
-{
+class MateriaSource : public IMateriaSource {
  public:
   MateriaSource();
   MateriaSource(MateriaSource const &other);

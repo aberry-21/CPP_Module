@@ -18,7 +18,7 @@ AMateria &AMateria::operator=(const AMateria &other) {
   if (this == &other) {
     return *this;
   }
-  type_= other.type_;
+  type_ = other.type_;
   xp_ = other.xp_;
   return *this;
 }
@@ -31,7 +31,7 @@ uint32_t AMateria::getXp() const {
   return xp_;
 }
 
-void AMateria::use(ICharacter &target) {
+void AMateria::use(const ICharacter &target) {
   static_cast<void>(target);
   xp_ += 10;
 }

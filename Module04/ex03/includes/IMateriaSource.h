@@ -4,6 +4,8 @@
 
 #pragma once
 
+#include <string>
+
 #include "AMateria.h"
 
 class IMateriaSource {

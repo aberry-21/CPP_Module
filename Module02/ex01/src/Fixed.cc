@@ -65,8 +65,7 @@ Fixed::Fixed(const int &i_value) {
   raw_bits_ = (i_value << bits_);
 }
 
-std::ostream  &operator<<(std::ostream &out, Fixed const &value)
-{
+std::ostream  &operator<<(std::ostream &out, Fixed const &value) {
   out << value.toFloat();
   return (out);
 }

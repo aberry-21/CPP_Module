@@ -4,8 +4,7 @@
 
 #pragma once
 
-class ISpaceMarine
-{
+class ISpaceMarine {
  public:
   virtual ~ISpaceMarine() {}
   virtual ISpaceMarine* clone() const = 0;

@@ -2,6 +2,8 @@
 // Created by Aaron Berry on 4/22/21.
 //
 
+#pragma once
+
 #include "ISpaceMarine.h"
 
 class AssaultTerminator : public ISpaceMarine {

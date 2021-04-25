@@ -17,10 +17,10 @@ class AMateria {
   AMateria(AMateria const &other);
   virtual ~AMateria();
   AMateria            &operator=(AMateria const &other);
-  const std::string   &getType() const; //Returns the materia type
-  uint32_t            getXp() const; //Returns the Materia's XP
+  const std::string   &getType() const;  // Returns the materia type
+  uint32_t            getXp() const;  // Returns the Materia's XP
   virtual AMateria*   clone() const = 0;
-  virtual void        use(ICharacter &target);
+  virtual void        use(const ICharacter &target);
 
  private:
   std::string type_;

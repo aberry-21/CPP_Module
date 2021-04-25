@@ -22,7 +22,7 @@ Ice &Ice::operator=(const Ice &other) {
   return (*this);
 }
 
-void Ice::use(ICharacter &target) {
+void Ice::use(const ICharacter &target) {
   std::cout << "* shoots an ice bolt at " << target.getName()
             << " *" << std::endl;
   AMateria::use(target);

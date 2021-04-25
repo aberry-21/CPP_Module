@@ -14,7 +14,7 @@ Enemy::Enemy(int hitPoint, const std::string &type)
 
 Enemy::Enemy(const Enemy &other)
       : hit_point_(other.hit_point_),
-        type_(other.type_){}
+        type_(other.type_) {}
 
 Enemy::~Enemy() {}
 
@@ -36,7 +36,7 @@ const std::string &Enemy::getType() const {
 
 void    Enemy::takeDamage(int damage) {
   if (damage < 0)
-    return ;
+    return;
   if (hit_point_ - damage < 0) {
     hit_point_ = 0;
   } else {

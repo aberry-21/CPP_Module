@@ -10,8 +10,7 @@
 #include "includes/IMateriaSource.h"
 #include "includes/MateriaSource.h"
 
-int main()
-{
+int main() {
   IMateriaSource* src = new MateriaSource();
   src->learnMateria(new Ice());
   src->learnMateria(new Cure());

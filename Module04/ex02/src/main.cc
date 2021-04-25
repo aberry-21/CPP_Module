@@ -16,8 +16,7 @@ int     main() {
   ISquad* vlc = new Squad;
   vlc->push(bob);
   vlc->push(jim);
-  for (int i = 0; i < vlc->getCount(); ++i)
-  {
+  for (int i = 0; i < vlc->getCount(); ++i) {
     ISpaceMarine* cur = vlc->getUnit(i);
     cur->battleCry();
     cur->rangedAttack();

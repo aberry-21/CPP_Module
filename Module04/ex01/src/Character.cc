@@ -56,10 +56,10 @@ void    Character::equip(AWeapon *weapon) {
 
 void    Character::attack(Enemy *enemy) {
   if (weapon_ == nullptr || enemy == nullptr)
-    return ;
+    return;
   if (ap_ < weapon_->getApCost()) {
     std::cout << "No AP" << std::endl;
-    return ;
+    return;
   } else {
     ap_ -= weapon_->getApCost();
   }

@@ -4,6 +4,8 @@
 
 #pragma once
 
+#include <string>
+
 #include "AMateria.h"
 
 class Cure : public AMateria {
@@ -14,5 +16,5 @@ class Cure : public AMateria {
   virtual ~Cure();
   Cure                 &operator=(Cure const &other);
   AMateria*           clone() const;
-  void                use(ICharacter &target);
+  void                use(const ICharacter &target);
 };

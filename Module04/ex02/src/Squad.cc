@@ -3,9 +3,10 @@
 //
 
 #include <cstddef>
-#include "includes/Squad.h"
 #include <cstring>
 #include <iostream>
+
+#include "includes/Squad.h"
 
 static void DeleteUnits(ISpaceMarine **units, int size) {
   for (int i = 0; i < size; ++i) {

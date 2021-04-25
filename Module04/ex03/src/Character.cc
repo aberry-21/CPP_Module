@@ -2,6 +2,8 @@
 // Created by Aaron Berry on 4/23/21.
 //
 
+#include <iostream>
+
 #include "includes/Character.h"
 
 static void DeleteInventory(AMateria **inventory) {
@@ -32,10 +34,12 @@ Character::~Character() {
   }
 }
 
+
 Character &Character::operator=(const Character &other) {
   if (this == &other) {
     return *this;
   }
+  std::cout << "Good!";
   name_ = other.name_;
   DeleteInventory(inventory_);
   for (int i = 0; i < 4; ++i) {
@@ -68,7 +72,7 @@ void Character::unequip(int idx) {
   }
 }
 
-void Character::use(int idx, ICharacter &target) {
+void Character::use(int idx, const ICharacter &target) {
   if (idx >= 0 && idx < 4) {
     if (inventory_[idx])
       inventory_[idx]->use(target);

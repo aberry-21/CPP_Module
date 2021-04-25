@@ -9,8 +9,8 @@
 class Fixed {
  public:
   Fixed();
-  Fixed(int const &i_value);
-  Fixed(float const &f_value);
+  explicit Fixed(int const &i_value);
+  explicit Fixed(float const &f_value);
   Fixed(Fixed const &other);
   ~Fixed();
   Fixed             &operator=(Fixed const &other);
