@@ -12,13 +12,16 @@ Bureaucrat::Bureaucrat(const Bureaucrat &other)
             : name_(other.name_),
               grade_(other.grade_) {}
 
-Bureaucrat::Bureaucrat(const std::string& name)
-            : name_(name),
-              grade_() {}
-
 Bureaucrat::Bureaucrat(const std::string &name, int grade)
-            : name_(name),
-              grade_(grade) {}
+            : name_(name) {
+  if (grade < 1) {
+    throw Bureaucrat::GradeTooHighException("overestimate");
+  }
+  if (grade > 150) {
+    throw Bureaucrat::GradeTooLowException("too low rating");
+  }
+  grade_ = grade;
+}
 
 Bureaucrat::~Bureaucrat() {}
 
@@ -39,6 +42,37 @@ int Bureaucrat::getGrade() const {
   return grade_;
 }
 
-Bureaucrat::GradeTooHighException::~GradeTooHighException() {}
+void Bureaucrat::upGrade()
+{
+  if (grade_ - 1 < 1) {
+    throw Bureaucrat::GradeTooHighException("overestimate");
+  }
+  --grade_;
+}
 
-Bureaucrat::GradeTooLowException::~GradeTooLowException() throw() {}
+void Bureaucrat::downGrade()
+{
+  if (grade_ + 1 > 150) {
+    throw Bureaucrat::GradeTooLowException("too low rating");
+  }
+  ++grade_;
+}
+
+
+Bureaucrat::GradeTooHighException &Bureaucrat::GradeTooHighException::operator=(
+        const Bureaucrat::GradeTooHighException &other) throw() {
+  if (this == &other) {
+    return *this;
+  }
+  m_error = other.m_error;
+  return *this;
+}
+
+Bureaucrat::GradeTooLowException &Bureaucrat::GradeTooLowException::operator=(
+        const Bureaucrat::GradeTooLowException &other) throw() {
+  if (this == &other) {
+    return *this;
+  }
+  m_error = other.m_error;
+  return *this;
+}
