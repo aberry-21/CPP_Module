@@ -22,13 +22,13 @@ class Bureaucrat {
   class GradeTooHighException: public std::exception {
    public:
     GradeTooHighException()
-              throw() {};
+              throw() {}
     GradeTooHighException(GradeTooHighException const &other)
-              throw() : m_error(other.m_error) {};
+              throw() : m_error(other.m_error) {}
     GradeTooHighException &operator=(const GradeTooHighException &other)
               throw();
     virtual ~GradeTooHighException()
-              throw() {};
+              throw() {}
     explicit GradeTooHighException(const std::string& error)
               : m_error(error) {}
     const char *what() const
@@ -41,13 +41,13 @@ class Bureaucrat {
   class GradeTooLowException: public std::exception {
    public:
     GradeTooLowException()
-              throw() {};
+              throw() {}
     GradeTooLowException(GradeTooLowException const &other)
-              throw() : m_error(other.m_error) {};
+              throw() : m_error(other.m_error) {}
     GradeTooLowException &operator=(const GradeTooLowException &other)
               throw();
     virtual ~GradeTooLowException()
-              throw() {};
+              throw() {}
     explicit GradeTooLowException(const std::string& error)
               : m_error(error) {}
     const char *what() const

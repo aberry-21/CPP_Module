@@ -5,11 +5,13 @@
 #include <iostream>
 #include <string>
 
+#include "includes/Form.h"
 #include "includes/Bureaucrat.h"
 
 Form::Form(const std::string &name, int grade_sign, int grade_exec)
       :name_(name),
-       signed_(false) {
+       signed_(false),
+       target_() {
   if (grade_sign < 1 || grade_exec < 1) {
     throw Form::GradeTooHighException("overestimate");
   }
@@ -24,7 +26,8 @@ Form::Form(Form const &other)
       :name_(other.name_),
        grade_sign_(other.grade_sign_),
        grade_exec_(other.grade_exec_),
-       signed_(other.signed_) {}
+       signed_(other.signed_),
+       target_(other.target_) {}
 
 Form &Form::operator=(Form const &other) {
   if (this == &other) {
@@ -34,6 +37,7 @@ Form &Form::operator=(Form const &other) {
   grade_sign_ = other.grade_sign_;
   grade_exec_ = other.grade_exec_;
   signed_ = other.signed_;
+  target_ = other.target_;
   return *this;
 }
 
@@ -63,12 +67,57 @@ void Form::beSigned(Bureaucrat const &target) {
   }
 }
 
+void Form::execute(const Bureaucrat &executor) const {
+  if (!signed_) {
+    throw Form::FormNotSignedException("Form dont signed");
+  }
+  if (executor.getGrade() > grade_exec_) {
+    throw Form::FormNotSignedException("Need more grade");
+  }
+  beExecuted();
+}
+
+void Form::setTarget(const std::string &target) {
+  target_ = target;
+}
+
+const std::string &Form::getTarget() const {
+  return target_;
+}
+
 std::ostream &operator<<(std::ostream &out, Form const &target) {
   out << target.getName() << " is ";
-  target.getSigned() == true ? out << "signed." : out << " not signed.";
+  target.getSigned() ? out << "signed." : out << " not signed.";
   out << " Requiered sign grade is "
       << target.getGradeSign()
       << ". Requiered exec grade is "
       << target.getGradeExec();
   return (out);
+}
+
+Form::GradeTooHighException &Form::GradeTooHighException::operator=(
+        const Form::GradeTooHighException &other) throw() {
+  if (this == &other) {
+    return *this;
+  }
+  m_error = other.m_error;
+  return *this;
+}
+
+Form::GradeTooLowException &Form::GradeTooLowException::operator=(
+        const Form::GradeTooLowException &other) throw() {
+  if (this == &other) {
+    return *this;
+  }
+  m_error = other.m_error;
+  return *this;
+}
+
+Form::FormNotSignedException &Form::FormNotSignedException::operator=(
+        const Form::FormNotSignedException &other) throw() {
+  if (this == &other) {
+    return *this;
+  }
+  m_error = other.m_error;
+  return *this;
 }

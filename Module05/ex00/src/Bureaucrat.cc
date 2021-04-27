@@ -45,16 +45,14 @@ int Bureaucrat::getGrade() const {
   return grade_;
 }
 
-void Bureaucrat::upGrade()
-{
+void Bureaucrat::upGrade() {
   if (grade_ - 1 < 1) {
     throw Bureaucrat::GradeTooHighException("overestimate");
   }
   --grade_;
 }
 
-void Bureaucrat::downGrade()
-{
+void Bureaucrat::downGrade() {
   if (grade_ + 1 > 150) {
     throw Bureaucrat::GradeTooLowException("too low rating");
   }

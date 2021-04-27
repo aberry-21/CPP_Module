@@ -4,8 +4,7 @@
 
 #include <iostream>
 
-#include "../includes/Bureaucrat.h"
-#include "../includes/Form.h"
+#include "includes/Bureaucrat.h"
 
 int main() {
   Bureaucrat  *bure;
