@@ -1,0 +1,1 @@
+/usr/bin/clang++  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/mommy.dir/src/Bureaucrat.cc.o CMakeFiles/mommy.dir/src/Form.cc.o CMakeFiles/mommy.dir/src/main.cc.o -o mommy 
