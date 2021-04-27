@@ -4,7 +4,7 @@
 
 #include <iostream>
 
-#include "includes/Bureaucrat.h"
+#include "../includes/Bureaucrat.h"
 
 int main() {
   Bureaucrat  *bure;
@@ -33,11 +33,15 @@ int main() {
     bure->downGrade();
     bure->downGrade();
     bure->downGrade();
+    bure->downGrade();
   } catch (std::exception & e) {
     bure = nullptr;
     std::cerr << "Exception: " << e.what() << std::endl;
   }
   delete bure;
+
+  Bureaucrat new_buro("Bill", 120);
+  std::cout << new_buro;
 
   return 0;
 }

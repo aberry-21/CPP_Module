@@ -61,3 +61,5 @@ class Bureaucrat {
   std::string     name_;
   int             grade_;
 };
+
+std::ostream &operator<<(std::ostream &out, const Bureaucrat &target);

@@ -2,6 +2,9 @@
 // Created by Aaron Berry on 4/25/21.
 //
 
+#include <iostream>
+#include <string>
+
 #include "includes/Bureaucrat.h"
 
 Bureaucrat::Bureaucrat()
@@ -76,3 +79,12 @@ Bureaucrat::GradeTooLowException &Bureaucrat::GradeTooLowException::operator=(
   m_error = other.m_error;
   return *this;
 }
+
+std::ostream &operator << (std::ostream &out, const Bureaucrat &target) {
+  out << target.getName()
+      << " , bureaucrat grade "
+      << target.getGrade()
+      << std::endl;
+  return out;
+}
+
