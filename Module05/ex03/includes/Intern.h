@@ -14,17 +14,17 @@ class Intern {
   Intern  &operator=(Intern const &other);
   Form *makeForm(const std::string &form_name, const std::string &target);
 
-  class FormNotExistExecption : public std::exception {
+  class FormNotExistException : public std::exception {
    public:
-    FormNotExistExecption()
+    FormNotExistException()
               throw() {}
-    FormNotExistExecption(FormNotExistExecption const &other)
+    FormNotExistException(FormNotExistException const &other)
               throw() : m_error(other.m_error) {}
-    FormNotExistExecption &operator=(const FormNotExistExecption &other)
+    FormNotExistException &operator=(const FormNotExistException &other)
               throw();
-    virtual ~FormNotExistExecption()
+    virtual ~FormNotExistException()
               throw() {}
-    explicit FormNotExistExecption(const std::string& error)
+    explicit FormNotExistException(const std::string& error)
               : m_error(error) {}
     const char *what() const
               throw() { return m_error.c_str(); }

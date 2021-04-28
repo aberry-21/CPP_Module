@@ -56,11 +56,11 @@ Form*   Intern::makeForm(std::string const &form_name,
     }
   }
   std::cout << "Intern doesn't create " << form_name << std::endl;
-  throw Intern::FormNotExistExecption("Not found this form");
+  throw Intern::FormNotExistException("Not found this form");
 }
 
-Intern::FormNotExistExecption &Intern::FormNotExistExecption::operator=(
-        const Intern::FormNotExistExecption &other) throw() {
+Intern::FormNotExistException &Intern::FormNotExistException::operator=(
+        const Intern::FormNotExistException &other) throw() {
   m_error = other.m_error;
   return *this;
 }
