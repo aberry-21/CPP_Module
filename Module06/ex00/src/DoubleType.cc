@@ -8,8 +8,9 @@
 
 void DoubleType::CheckBorderAndNan() {
   VariableType::CheckBorderAndNan();
-  if (value_ >= std::numeric_limits<double>::infinity()) {
-    impossible_ = true;
+  if (value_ >= std::numeric_limits<double>::infinity() ||
+      value_ <= -std::numeric_limits<double>::infinity()) {
+    impossible_ = false;
   }
 }
 

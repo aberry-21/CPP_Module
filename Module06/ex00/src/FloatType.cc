@@ -8,6 +8,10 @@
 
 void FloatType::CheckBorderAndNan() {
   VariableType::CheckBorderAndNan();
+  if (value_ >= std::numeric_limits<double>::infinity() ||
+      value_ <= -std::numeric_limits<double>::infinity()) {
+    impossible_ = false;
+  }
 }
 
 FloatType::FloatType(double value, bool impossible, const std::string &type,
