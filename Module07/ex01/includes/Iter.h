@@ -5,15 +5,18 @@
 #pragma once
 
 template<typename T>
-void iter(T (*array), int size, void (*func)(T &))
-{
+void Iter(T (*array), int size, void (*func)(T &)) {
   for (int i = 0; i < size; ++i) {
     func(array[i]);
   }
 }
 
 template <typename T>
-void    print(T &elem)
-{
+void Print(T &elem) {
+  std::cout << elem << std::endl;
+}
+
+template <typename T>
+void Print(const T &elem) {
   std::cout << elem << std::endl;
 }

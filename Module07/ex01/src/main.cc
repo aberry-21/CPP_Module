@@ -15,16 +15,16 @@ int main() {
   bool array_bool[2] = {true, false};
   std::string array_string[2] = {"some string", "sssstring"};
   std::cout << "__________int__________" << std::endl;
-  iter(array_int, 2, print);
+  Iter(array_int, 2, Print);
   std::cout << "__________float__________" << std::endl;
-  iter(array_float, 2, print);
+  Iter(array_float, 2, Print);
   std::cout << "__________double__________" << std::endl;
-  iter(array_double, 2, print);
+  Iter(array_double, 2, Print);
   std::cout << "__________char__________" << std::endl;
-  iter(array_char, 2, print);
+  Iter(array_char, 2, Print);
   std::cout << "__________bool__________" << std::endl;
-  iter(array_bool, 2, print);
+  Iter(array_bool, 2, Print);
   std::cout << "__________string__________" << std::endl;
-  iter(array_string, 2, print);
+  Iter(array_string, 2, Print);
   return 0;
 }
