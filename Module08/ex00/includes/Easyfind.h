@@ -4,6 +4,8 @@
 
 #pragma once
 
+#include <string>
+
 class NotFoundException: public std::exception {
  public:
   NotFoundException()
@@ -27,6 +29,6 @@ typename T::iterator Easyfind(T &target, const int elem) {
   typename T::iterator iter;
   iter = std::find(target.begin(), target.end(), elem);
   if (iter == target.end())
-    throw (NotFoundException("Not found elem"));
+    throw NotFoundException("Not found elem");
   return (iter);
 }
